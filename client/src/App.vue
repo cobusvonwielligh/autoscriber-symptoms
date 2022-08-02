@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import SymptomIO from "./components/SymptomIO.vue";
   const devDate = new Date("02-08-2022").toDateString();
-  const testSymptoms = ['test', 'foo'];
+ // const testSymptoms = ['test', 'foo'];
   const description = "";
 
 </script>
@@ -21,7 +21,7 @@
     </div>
 
     <div class="wrapper">
-      <SymptomIO title="Technical Assessment" symptoms="" :keywords=testSymptoms description={{description}} />
+      <SymptomIO title="Technical Assessment" symptoms="" description={{description}} />
     </div>
   </div>
 

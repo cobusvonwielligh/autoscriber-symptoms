@@ -7,9 +7,11 @@
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
+    "postinstall": "npx patch-package", 
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "vue": "^3.2.37",
     "vue-highlight-words": "^3.0.1"
   },

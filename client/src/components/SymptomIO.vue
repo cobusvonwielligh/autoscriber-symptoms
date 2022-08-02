@@ -1,12 +1,36 @@
 <script setup lang="ts">
 
 import Highlighter from 'vue-highlight-words'
+import Axios from 'axios';
+import { onMounted, shallowRef, reactive } from 'vue';
 
 defineProps < {
     symptoms: string;
     title: string;
-    keywords: string[];
 } > ();
+
+    interface values {
+        value: string[];
+    }
+    
+    const state = reactive({words: []})
+    let keywords : string[] = [];
+    const baseUrl = 'http://localhost:4200/';
+    const testData = shallowRef<values>();
+
+    onMounted (() => {
+        Axios.get(`${baseUrl}scan-text`).then( res => {
+        keywords = res.data;
+        testData.value = res.data;
+        state.words = res.data;
+        console.log('inside', testData.value);
+        return { testData }
+    }).catch( err => {
+        console.error(err);
+    });
+    })
+    
+      console.log('outside', state.words);    
 
 </script>
 
@@ -15,10 +39,11 @@ defineProps < {
     <div class="input-text-field">
         <input v-model="symptoms" class="search" placeholder="Enter text here..." />
     </div>
-    <!-- <h3 class="output-text">{{ symptoms }}</h3> -->
-    <Highlighter class="output-text" :style="{ color: 'white' }"
+
+    <!--TODO: Fix undefined type-->
+    <Highlighter shallowRef="testData" class="output-text" :style="{ color: 'white', }"
       highlightClassName="highlight"
-      :searchWords="keywords"
+      :searchWords="testData?.value"
       :autoEscape="true"
       :textToHighlight="symptoms"/>
     
@@ -44,8 +69,9 @@ h3 {
 .output-text {
     text-align: center;
     word-wrap: normal;
-    width: 9rem !important;
+    width: 9rem;
     height: 2rem;
+    font-size: 1.2rem;
 }
 
 .search {

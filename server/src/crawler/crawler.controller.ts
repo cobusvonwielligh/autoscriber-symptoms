@@ -6,7 +6,7 @@ export class CrawlerController {
   constructor(private readonly appCrawlerService: CrawlerService) {}
 
   @Get("/scan-text")
-  scrape(): Promise<void> {
+  scrape(): Promise<String[]> {
     return this.appCrawlerService.scrape().then((res) => res);
   }
 }

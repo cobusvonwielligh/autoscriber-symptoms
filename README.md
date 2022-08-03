@@ -11,7 +11,7 @@ Following these instructions will get you a copy of the project up and running o
 
 ### Prerequisites
 
-- [yarn](https://classic.yarnpkg.com/en/) `npm i yarn`
+- [yarn](https://classic.yarnpkg.com/en/)  `npm i yarn`
 - [Node](https://nodejs.org/en/) ^v14.4.0
 
 ### Installing
@@ -59,9 +59,9 @@ There are 2 environments each corresponding to a branch on the repository:
 
 ## Server
 
-- [Nest.js] (https://nestjs.com/)
-- [OpenAPI (Swagger)] (https://docs.nestjs.com/openapi/introduction) 
-- [TypeScript] (https://www.typescriptlang.org/)
+- [Nest.js](https://nestjs.com/)
+- [OpenAPI (Swagger)](https://docs.nestjs.com/openapi/introduction) 
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## CD/CI
 

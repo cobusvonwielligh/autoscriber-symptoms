@@ -9,13 +9,19 @@ async function bootstrap() {
     .setTitle('AA-API')
     .setDescription('Autoscriber Assessment API')
     .setVersion('0.1')
-    .addTag('Documentation')
+    .setLicense('MIT', 'https://www.mit.edu/~amini/LICENSE.md')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);  
   
-  app.enableCors();
+  const baseOriginUrl = 'http://127.0.0.1:5173/';
+  
+  app.enableCors(
+  {
+    //Todo: security improvement -> allow only baseOriginUrl
+  });
+
   await app.listen(4200);
 }
 bootstrap();

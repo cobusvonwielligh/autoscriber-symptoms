@@ -1,52 +1,42 @@
-<script setup lang="ts">
-
-import Highlighter from 'vue-highlight-words'
+<script lang="ts">
 import Axios from 'axios';
-import { onMounted, shallowRef, reactive } from 'vue';
+import Highlighter from 'vue-highlight-words'
 
-defineProps < {
-    symptoms: string;
-    title: string;
-} > ();
+const keywords: string[] = [];
+const baseUrl = 'http://localhost:4200/';
 
-    interface values {
-        value: string[];
-    }
-    
-    const state = reactive({words: []})
-    let keywords : string[] = [];
-    const baseUrl = 'http://localhost:4200/';
-    const testData = shallowRef<values>();
-
-    onMounted (() => {
-        Axios.get(`${baseUrl}scan-text`).then( res => {
-        keywords = res.data;
-        testData.value = res.data;
-        state.words = res.data;
-        console.log('inside', testData.value);
-        return { testData }
-    }).catch( err => {
-        console.error(err);
-    });
-    })
-    
-      console.log('outside', state.words);    
-
+export default {
+    data() {
+        return {
+            payload: keywords,
+        }
+    },
+    async mounted() {
+        await Axios.get(`${baseUrl}scan-text`).then((res) => {
+            //@ts-ignore
+            this.payload = res?.data
+            console.log('data', res?.data);
+        }).catch((err) => {
+            console.log("Error ", err);
+        });
+    },
+    components: {
+        Highlighter,
+    },
+    props: ['symptoms'],
+}
 </script>
 
 <template>
 <div class="wrapper">
     <div class="input-text-field">
-        <input v-model="symptoms" class="search" placeholder="Enter text here..." />
+        <input v-model="symptoms" @change="$emit('update:symptoms', symptoms)" class="search" placeholder="Enter text here..." />
     </div>
 
-    <!--TODO: Fix undefined type for Highlighter:searchWords | currently only placeholder values-->
-    <Highlighter shallowRef="testData" class="output-text" :style="{ color: 'white', }"
-      highlightClassName="highlight"
-      :searchWords="testData?.value ? testData.value : ['test', 'foo', 'bar']"
-      :autoEscape="true"
-      :textToHighlight="symptoms"/>
-    
+    <div class="output-text-wrapper">
+        <Highlighter class="output-text" :style="{ color: 'white', }" highlightClassName="highlight" :searchWords="payload" :autoEscape="true" :caseSensitive="false" :textToHighlight="symptoms" />
+    </div>
+
 </div>
 </template>
 
@@ -68,10 +58,17 @@ h3 {
 
 .output-text {
     text-align: center;
-    word-wrap: normal;
     width: 9rem;
     height: 2rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+.output-text-wrapper {
+    width: 15rem;
+    height: 15rem;
+    overflow: auto;
+    word-wrap: break-word;
+    padding-top: 1rem;
 }
 
 .search {
@@ -94,7 +91,7 @@ h3 {
 }
 
 .input-text-field {
-    padding-top: 0.25rem;
+    padding-top: 10rem;
 }
 
 .title h1,

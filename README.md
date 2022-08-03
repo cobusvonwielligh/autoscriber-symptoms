@@ -24,6 +24,16 @@ Following these instructions will get you a copy of the project up and running o
 ```cp
 git clone https://github.com/cobusvonwielligh/autoscriber-symptoms.git
 ```
+#### Install Client Dependencies
+```cp
+cd client
+yarn
+```
+#### Install Server Dependencies
+```cp
+cd server
+yarn
+```
 
 # Run Client
 

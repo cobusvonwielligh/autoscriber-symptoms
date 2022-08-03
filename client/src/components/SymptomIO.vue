@@ -8,14 +8,10 @@ defineProps < {
     symptoms: string;
 } > ();
 
-    interface values {
-        value: string[];
-    }
-    
     const state = reactive({words: []})
     let keywords : string[] = [];
     const baseUrl = 'http://localhost:4200/';
-    const testData = shallowRef<values>();
+    const testData = shallowRef();
 
     onMounted (() => {
         Axios.get(`${baseUrl}scan-text`).then( res => {
@@ -40,12 +36,13 @@ defineProps < {
     </div>
 
     <!--TODO: Fix undefined type for Highlighter:searchWords | currently only placeholder values-->
-    <Highlighter shallowRef="testData" class="output-text" :style="{ color: 'white', }"
-      highlightClassName="highlight"
-      :searchWords="testData?.value ? testData.value : ['test', 'foo', 'bar']"
-      :autoEscape="true"
-      :textToHighlight="symptoms ? symptoms : ''"/>
-    
+    <div class="output-text-wrapper">
+        <Highlighter shallowRef="testData" class="output-text" :style="{ color: 'white', }"
+        highlightClassName="highlight"
+        :searchWords="testData?.value ? testData.value : ['test', 'foo', 'bar']"
+        :autoEscape="true"
+        :textToHighlight="symptoms ? symptoms : ''"/>
+    </div>
 </div>
 </template>
 
@@ -67,10 +64,17 @@ h3 {
 
 .output-text {
     text-align: center;
-    word-wrap: normal;
     width: 9rem;
     height: 2rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+.output-text-wrapper {
+    width: 15rem;
+    height: 15rem;
+    overflow: auto;
+    word-wrap: break-word;
+    padding-top: 1rem;
 }
 
 .search {
@@ -93,7 +97,7 @@ h3 {
 }
 
 .input-text-field {
-    padding-top: 0.25rem;
+    padding-top: 10rem;
 }
 
 .title h1,

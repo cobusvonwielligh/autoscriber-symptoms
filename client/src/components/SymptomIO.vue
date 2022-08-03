@@ -35,14 +35,15 @@ import Highlighter from 'vue-highlight-words'
         <input v-model="symptoms" @change="$emit('update:symptoms', symptoms)" class="search" placeholder="Enter text here..." />
     </div>
 
-    <!--TODO: Fix undefined type for Highlighter:searchWords | currently only placeholder values-->
     <div class="output-text-wrapper">
-        <Highlighter shallowRef="testData" class="output-text" :style="{ color: 'white', }"
+        <Highlighter class="output-text" :style="{ color: 'white', }"
         highlightClassName="highlight"
-        :searchWords="testData?.value ? testData.value : ['test', 'foo', 'bar']"
+        :searchWords="payload"
         :autoEscape="true"
-        :textToHighlight="symptoms ? symptoms : ''"/>
+        :caseSensitive="false"
+        :textToHighlight="symptoms"/>
     </div>
+    
 </div>
 </template>
 

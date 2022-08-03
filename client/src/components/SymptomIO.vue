@@ -1,31 +1,31 @@
-<script setup lang="ts">
-
-import Highlighter from 'vue-highlight-words'
+<script lang="ts">
 import Axios from 'axios';
-import { onMounted, shallowRef, reactive } from 'vue';
+import Highlighter from 'vue-highlight-words'
 
-defineProps < {
-    symptoms: string;
-} > ();
-
-    const state = reactive({words: []})
-    let keywords : string[] = [];
+    const keywords : string[] = [];
     const baseUrl = 'http://localhost:4200/';
-    const testData = shallowRef();
 
-    onMounted (() => {
-        Axios.get(`${baseUrl}scan-text`).then( res => {
-        keywords = res.data;
-        testData.value = res.data;
-        state.words = res.data;
-        console.log('inside', testData.value);
-        return { testData }
-    }).catch( err => {
-        console.error(err);
-    });
-    })
-    
-      console.log('outside', state.words);    
+    export default {
+        data() {
+            return {
+            payload: keywords,
+            }
+        }, 
+        async mounted() {
+           await Axios.get(`${baseUrl}scan-text`).then((res) => {
+                //@ts-ignore
+                this.payload = res?.data
+                console.log('data', res?.data);
+            }).catch((err) => {
+                console.log("Error ", err);
+            });
+        },
+        components: {
+            Highlighter,
+        },
+        props: ['symptoms'],
+    }
+
 
 </script>
 

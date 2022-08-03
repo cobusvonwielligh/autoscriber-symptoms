@@ -18,18 +18,18 @@ Following these instructions will get you a copy of the project up and running o
 
 - Clone the repository using HTTPS
 
-```
+```cp
 git clone https://github.com/cobusvonwielligh/autoscriber-symptoms.git
 ```
 
-```
+```cp
 cd autoscriber-symptoms
 yarn
 ```
 
 # Run Client
 
-```
+```cp
 cd client
 yarn dev
 ```
@@ -38,7 +38,7 @@ yarn dev
 
 # Run Server
 
-```
+```cp
 cd server
 yarn start
 ```
@@ -54,8 +54,8 @@ There are 2 environments each corresponding to a branch on the repository:
 
 ## Client
 
-- [Vue.js] (https://vuejs.org/)
-- [TypeScript] (https://www.typescriptlang.org/)
+- [Vue.js](https://vuejs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## Server
 

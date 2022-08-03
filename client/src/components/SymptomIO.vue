@@ -2,31 +2,29 @@
 import Axios from 'axios';
 import Highlighter from 'vue-highlight-words'
 
-    const keywords : string[] = [];
-    const baseUrl = 'http://localhost:4200/';
+const keywords: string[] = [];
+const baseUrl = 'http://localhost:4200/';
 
-    export default {
-        data() {
-            return {
+export default {
+    data() {
+        return {
             payload: keywords,
-            }
-        }, 
-        async mounted() {
-           await Axios.get(`${baseUrl}scan-text`).then((res) => {
-                //@ts-ignore
-                this.payload = res?.data
-                console.log('data', res?.data);
-            }).catch((err) => {
-                console.log("Error ", err);
-            });
-        },
-        components: {
-            Highlighter,
-        },
-        props: ['symptoms'],
-    }
-
-
+        }
+    },
+    async mounted() {
+        await Axios.get(`${baseUrl}scan-text`).then((res) => {
+            //@ts-ignore
+            this.payload = res?.data
+            console.log('data', res?.data);
+        }).catch((err) => {
+            console.log("Error ", err);
+        });
+    },
+    components: {
+        Highlighter,
+    },
+    props: ['symptoms'],
+}
 </script>
 
 <template>
@@ -36,14 +34,9 @@ import Highlighter from 'vue-highlight-words'
     </div>
 
     <div class="output-text-wrapper">
-        <Highlighter class="output-text" :style="{ color: 'white', }"
-        highlightClassName="highlight"
-        :searchWords="payload"
-        :autoEscape="true"
-        :caseSensitive="false"
-        :textToHighlight="symptoms"/>
+        <Highlighter class="output-text" :style="{ color: 'white', }" highlightClassName="highlight" :searchWords="payload" :autoEscape="true" :caseSensitive="false" :textToHighlight="symptoms" />
     </div>
-    
+
 </div>
 </template>
 

@@ -6,7 +6,6 @@ import { onMounted, shallowRef, reactive } from 'vue';
 
 defineProps < {
     symptoms: string;
-    title: string;
 } > ();
 
     interface values {

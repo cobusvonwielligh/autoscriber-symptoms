@@ -36,7 +36,7 @@ defineProps < {
 <template>
 <div class="wrapper">
     <div class="input-text-field">
-        <input v-model="symptoms" @change="$emit('update:symptoms', symptoms);" class="search" placeholder="Enter text here..." />
+        <input v-model="symptoms" @change="$emit('update:symptoms', symptoms)" class="search" placeholder="Enter text here..." />
     </div>
 
     <!--TODO: Fix undefined type for Highlighter:searchWords | currently only placeholder values-->

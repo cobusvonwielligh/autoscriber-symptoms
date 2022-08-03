@@ -15,7 +15,7 @@
 
   <div class="body-wrap">
     <div class="wrapper">
-      <SymptomIO symptoms="Allergies"/>
+      <SymptomIO symptoms=""/>
     </div>
   </div>
 

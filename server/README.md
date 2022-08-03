@@ -25,6 +25,17 @@ yarn start:dev
 yarn start:prod
 ```
 
-## Stay in touch
+## Docker
 
-- Author - [Cobus von Wielligh](https://www.linkedin.com/in/cobusvonwielligh/)
+### build
+```cp
+docker-compose up -d --build server
+```
+### start server
+```cp
+docker-compose up
+```
+
+### Author
+
+- [Cobus von Wielligh](https://www.linkedin.com/in/cobusvonwielligh/)

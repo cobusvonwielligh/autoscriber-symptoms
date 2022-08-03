@@ -11,7 +11,7 @@ Following these instructions will get you a copy of the project up and running o
 
 ### Prerequisites
 
-- [yarn](https://classic.yarnpkg.com/en/) `npm i yarn`
+- [yarn](https://classic.yarnpkg.com/en/)  `npm i yarn`
 - [Node](https://nodejs.org/en/) ^v14.4.0
 
 ### Installing
@@ -59,18 +59,18 @@ There are 2 environments each corresponding to a branch on the repository:
 
 ## Server
 
-- [Nest.js] (https://nestjs.com/)
-- [OpenAPI (Swagger)] (https://docs.nestjs.com/openapi/introduction) 
-- [TypeScript] (https://www.typescriptlang.org/)
+- [Nest.js](https://nestjs.com/)
+- [OpenAPI (Swagger)](https://docs.nestjs.com/openapi/introduction) 
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## CD/CI
 
-Continuous Deployment and Integration is setup using [Netlify] (https://www.netlify.com/)
+Continuous Deployment and Integration is setup using [Netlify](https://www.netlify.com/)
 
 - Production: https://autoscriber.netlify.app/
 - Development: https://autoscriber-dev.netlify.app/
 
-## File Structure/ Project Structure
+## File Structure / Project Structure
 
 Within the download you will find the following directories and files:
 
@@ -111,6 +111,8 @@ autoscriber-symptoms/
 |   |   ├── main.ts
 |   ├── package.json
 |   ├── README.md
+|   ├── docker-compose.yml
+|   ├── Dockerfile
 |   ├── tsconfig.json
 |   ├── tsconfig.build.json   
 |   ├── yarn.lock

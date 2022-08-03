@@ -40,10 +40,10 @@ defineProps < {
         <input v-model="symptoms" class="search" placeholder="Enter text here..." />
     </div>
 
-    <!--TODO: Fix undefined type-->
+    <!--TODO: Fix undefined type for Highlighter:searchWords | currently only placeholder values-->
     <Highlighter shallowRef="testData" class="output-text" :style="{ color: 'white', }"
       highlightClassName="highlight"
-      :searchWords="testData?.value"
+      :searchWords="testData?.value ? testData.value : ['test', 'foo', 'bar']"
       :autoEscape="true"
       :textToHighlight="symptoms"/>
     

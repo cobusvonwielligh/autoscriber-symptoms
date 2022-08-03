@@ -23,10 +23,13 @@ export class CrawlerService {
         },
       })
 
-        let s = data.info.replaceAll('Back to top', '');
+        //TODO: static string manipulation (bad practice -> needs improvement)
+        //Note: replaceAll() only available in es2021 compiler
+        let s = data.info.replaceAll('Back to top', ''); 
         let a = [];
-        a = s.replace('Allergies', '').trim().split(/(?=[A-Z])/);
-        a.push('Allergies');
+      
+        s = s.replaceAll(/[^a-z]/gi, '');
+        a = s.split(/(?=[A-Z])/);
         console.log('info formatted:', a)
     
       return a;

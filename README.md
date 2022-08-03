@@ -1,7 +1,7 @@
 # autoscriber-symptoms
 ## Autoscriber Technical Assessment
 
-This application forms part of a technical assessment for Autoscriber. A basic Vue.js front-end which allows the user to enter text, which will be highlighted if it matches any of the symptoms, scraped using a Nest.js server from https://www.nhsinform.scot/symptoms-and-self-help/a-to-z/ when the user clicks on the 'Find Symptoms' button.
+This application forms part of a technical assessment for Autoscriber. A basic Vue.js front-end which allows the user to enter text, which will be highlighted if it matches any of the symptoms, scraped using a Nest.js server from https://www.nhsinform.scot/symptoms-and-self-help/a-to-z/.
 
 The application features a client (Vue.js & TypeScript) and a REST API server (Nest.js, OpenAPI (Swagger) & TypeScript)
 
@@ -62,6 +62,13 @@ There are 2 environments each corresponding to a branch on the repository:
 - [Nest.js] (https://nestjs.com/)
 - [OpenAPI (Swagger)] (https://docs.nestjs.com/openapi/introduction) 
 - [TypeScript] (https://www.typescriptlang.org/)
+
+## CD/CI
+
+Continuous Deployment and Integration is setup using [Netlify] (https://www.netlify.com/)
+
+- Production: https://autoscriber.netlify.app/
+- Development: https://autoscriber-dev.netlify.app/
 
 ## File Structure/ Project Structure
 

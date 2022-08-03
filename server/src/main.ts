@@ -15,13 +15,13 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);  
   
-  const baseOriginUrl = 'http://127.0.0.1:5173/';
+  const baseOriginUrl = 'http://localhost:5173/';
   
   app.enableCors(
   {
-    //Todo: security improvement -> allow only baseOriginUrl
+    //Todo: security improvement -> only allow baseOriginUrl
   });
 
-  await app.listen(4200);
+  await app.listen(4200, "0.0.0.0");
 }
 bootstrap();

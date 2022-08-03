@@ -1,0 +1,13 @@
+diff --git a/node_modules/vue-highlight-words/dist/vue-highlight-words.d.ts b/node_modules/vue-highlight-words/dist/vue-highlight-words.d.ts
+index 3661e75..b2adbb4 100644
+--- a/node_modules/vue-highlight-words/dist/vue-highlight-words.d.ts
++++ b/node_modules/vue-highlight-words/dist/vue-highlight-words.d.ts
+@@ -41,7 +41,7 @@ export declare interface VueHighlightWordsProps {
+     highlightClassName?: string;
+     highlightStyle?: Partial<CSSStyleDeclaration>;
+     sanitize?: (text: string) => string;
+-    searchWords: string[];
++    searchWords: string[] | undefined;
+     textToHighlight: string;
+ }
+ 

@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import SymptomIO from "./components/SymptomIO.vue";
-const devDate = new Date("02-08-2022").toDateString();
+  import SymptomIO from "./components/SymptomIO.vue";
+  const devDate = new Date("02-08-2022").toDateString();
+ // const testSymptoms = ['test', 'foo'];
+  const description = "";
+
 </script>
 
 <template>
@@ -14,17 +17,17 @@ const devDate = new Date("02-08-2022").toDateString();
 
   <div class="body-wrap">
     <div>
-      <a class="button" href="#todo">Find Symptom</a>
+      <a class="button" href="#todo">Find symptoms in text</a>
     </div>
 
     <div class="wrapper">
-      <SymptomIO title="Technical Assessment" symptoms="" />
+      <SymptomIO title="Technical Assessment" symptoms="" description={{description}} />
     </div>
   </div>
 
   <footer>
     <h3 class="footer-text">
-      Cobus von Wielligh | cobus@resembler.ai | {{ devDate }}
+      Cobus von Wielligh | {{ devDate }}
     </h3>
   </footer>
 </template>
@@ -57,7 +60,8 @@ header {
   font-size: 1rem;
   line-height: 3;
   border-radius: 0.3125rem;
-  width: 10rem;
+  width: 15rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0;
 }
 
 h1 {
@@ -78,6 +82,7 @@ h3 {
 .footer-text {
   color: rgba(235, 235, 235, 0.212);
   display: inline;
+  padding-top: 2rem;
 }
 
 @media (min-width: 1024px) {

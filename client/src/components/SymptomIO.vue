@@ -1,16 +1,52 @@
 <script setup lang="ts">
+
+import Highlighter from 'vue-highlight-words'
+import Axios from 'axios';
+import { onMounted, shallowRef, reactive } from 'vue';
+
 defineProps < {
     symptoms: string;
     title: string;
 } > ();
+
+    interface values {
+        value: string[];
+    }
+    
+    const state = reactive({words: []})
+    let keywords : string[] = [];
+    const baseUrl = 'http://localhost:4200/';
+    const testData = shallowRef<values>();
+
+    onMounted (() => {
+        Axios.get(`${baseUrl}scan-text`).then( res => {
+        keywords = res.data;
+        testData.value = res.data;
+        state.words = res.data;
+        console.log('inside', testData.value);
+        return { testData }
+    }).catch( err => {
+        console.error(err);
+    });
+    })
+    
+      console.log('outside', state.words);    
+
 </script>
 
 <template>
 <div class="wrapper">
-    <div class="input-text">
+    <div class="input-text-field">
         <input v-model="symptoms" class="search" placeholder="Enter text here..." />
     </div>
-    <h3 class="output-text">{{ symptoms }}</h3>
+
+    <!--TODO: Fix undefined type-->
+    <Highlighter shallowRef="testData" class="output-text" :style="{ color: 'white', }"
+      highlightClassName="highlight"
+      :searchWords="testData?.value"
+      :autoEscape="true"
+      :textToHighlight="symptoms"/>
+    
 </div>
 </template>
 
@@ -32,26 +68,33 @@ h3 {
 
 .output-text {
     text-align: center;
-    word-wrap: break-word;
+    word-wrap: normal;
     width: 9rem;
+    height: 2rem;
+    font-size: 1.2rem;
 }
 
 .search {
     display: inline-block;
     font-weight: 600;
     color: #429af8;
-    text-align: center;
+    text-align: left;
     vertical-align: middle;
     background-color: #fafafae9;
     border: 0.0625rem solid transparent;
-    padding: 0.75rem 1rem;
+    padding: 1rem 1rem;
     padding-left: 1rem;
     padding-top: 1rem;
     font-size: 1rem;
     line-height: 3;
     border-radius: 0.3125rem;
-    width: 10rem;
+    width: 15rem;
+    height: 2rem;
     text-align: center;
+}
+
+.input-text-field {
+    padding-top: 0.25rem;
 }
 
 .title h1,

@@ -5,6 +5,9 @@ This application forms part of a technical assessment for Autoscriber. A basic V
 
 The application features a client (Vue.js & TypeScript) and a REST API server (Nest.js, OpenAPI (Swagger) & TypeScript)
 
+![image](https://user-images.githubusercontent.com/79908261/182714533-bf139ad0-99c6-439e-8809-f996e0785b37.png)
+
+
 ## Getting Started
 
 Following these instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -57,7 +60,7 @@ There are 2 environments each corresponding to a branch on the repository:
 - [Vue.js](https://vuejs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 
-## Server (containerized)
+## Server (Containerized - see server README)
 
 - [Nest.js](https://nestjs.com/)
 - [OpenAPI (Swagger)](https://docs.nestjs.com/openapi/introduction) 

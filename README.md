@@ -25,11 +25,6 @@ Following these instructions will get you a copy of the project up and running o
 git clone https://github.com/cobusvonwielligh/autoscriber-symptoms.git
 ```
 
-```cp
-cd autoscriber-symptoms
-yarn
-```
-
 # Run Client
 
 ```cp

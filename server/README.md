@@ -2,6 +2,7 @@
 # server
 
 - [Nest](https://github.com/nestjs/nest)
+- [OpenAPI (Swagger)](https://swagger.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 
 ## Installation
@@ -35,6 +36,12 @@ docker-compose up -d --build server
 ```cp
 docker-compose up
 ```
+
+## Swagger (for API Documentation)
+- http://localhost:4200/api
+![image](https://user-images.githubusercontent.com/79908261/182717689-db4de674-1d71-4dc2-8f17-63c0d9511bf2.png)
+
+
 
 ### Author
 

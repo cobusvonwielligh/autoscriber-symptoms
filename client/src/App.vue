@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import SymptomIO from "./components/SymptomIO.vue";
-  const devDate = new Date("02-08-2022").toDateString();
- // const testSymptoms = ['test', 'foo'];
+  const devDate = new Date("03-08-2022").toDateString();
   const description = "";
 
 </script>
@@ -16,10 +15,6 @@
   </header>
 
   <div class="body-wrap">
-    <div>
-      <a class="button" href="#todo">Find symptoms in text</a>
-    </div>
-
     <div class="wrapper">
       <SymptomIO title="Technical Assessment" symptoms="" description={{description}} />
     </div>

@@ -44,7 +44,7 @@ defineProps < {
       highlightClassName="highlight"
       :searchWords="testData?.value ? testData.value : ['test', 'foo', 'bar']"
       :autoEscape="true"
-      :textToHighlight="symptoms"/>
+      :textToHighlight="symptoms ? symptoms : ''"/>
     
 </div>
 </template>

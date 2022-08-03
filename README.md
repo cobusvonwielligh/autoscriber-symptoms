@@ -57,11 +57,12 @@ There are 2 environments each corresponding to a branch on the repository:
 - [Vue.js](https://vuejs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 
-## Server
+## Server (containerized)
 
 - [Nest.js](https://nestjs.com/)
 - [OpenAPI (Swagger)](https://docs.nestjs.com/openapi/introduction) 
 - [TypeScript](https://www.typescriptlang.org/)
+- [Docker](https://www.docker.com/)
 
 ## CD/CI
 

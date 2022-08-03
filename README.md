@@ -65,12 +65,12 @@ There are 2 environments each corresponding to a branch on the repository:
 
 ## CD/CI
 
-Continuous Deployment and Integration is setup using [Netlify] (https://www.netlify.com/)
+Continuous Deployment and Integration is setup using [Netlify](https://www.netlify.com/)
 
 - Production: https://autoscriber.netlify.app/
 - Development: https://autoscriber-dev.netlify.app/
 
-## File Structure/ Project Structure
+## File Structure / Project Structure
 
 Within the download you will find the following directories and files:
 
@@ -111,6 +111,8 @@ autoscriber-symptoms/
 |   |   ├── main.ts
 |   ├── package.json
 |   ├── README.md
+|   ├── docker-compose.yml
+|   ├── Dockerfile
 |   ├── tsconfig.json
 |   ├── tsconfig.build.json   
 |   ├── yarn.lock

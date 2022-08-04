@@ -79,6 +79,13 @@ Continuous Deployment and Integration is setup using [Netlify](https://www.netli
 - Production: https://autoscriber.netlify.app/
 - Development: https://autoscriber-dev.netlify.app/
 
+---
+
+Server is deployed and hosted using [Glitch](https://glitch.com/)
+- API endpoint: https://pine-intelligent-author.glitch.me/api
+
+Note: Glitch is a free server deployment service | limited service, will be used for demo purposes only.
+
 ## File Structure / Project Structure
 
 Within the download you will find the following directories and files:
